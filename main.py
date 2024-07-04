@@ -109,8 +109,8 @@ def generar_grafico(m_gvs_p, m_gvs_b, nom_out, path_out=''):
     # Armo el plot doble
     plt.subplot(t[2],1,(1,t[2]-1)); 
     #Grafico ambos sets de datos
-    plt.plot(x,col_n_benign,linewidth=lw,color='g',label='Frequency>1/10,000'); 
-    plt.plot(x,col_n_path,linewidth=lw,color='r',label='Pathogenic'); 
+    plt.plot(x,col_n_benign,linewidth=lw,color='g',label='Frecuencia mayor a 1/10.000'); 
+    plt.plot(x,col_n_path,linewidth=lw,color='r',label='Variantes patogénicas'); 
 
     #Defino el diseño de los ejes
     plt.xlim(xlim); 
@@ -119,6 +119,9 @@ def generar_grafico(m_gvs_p, m_gvs_b, nom_out, path_out=''):
     plt.ylim([-0.8,7.5]); 
     plt.yticks(range(0,8,1)); 
     plt.ylabel('Número de variantes'); 
+
+    #Muestro la leyenda
+    plt.legend(loc='upper right')
     
     #Trabajo sobre la segunda parte
     plt.subplot(t[2],1,t[2]); 
